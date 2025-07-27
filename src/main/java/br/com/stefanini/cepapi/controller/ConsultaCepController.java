@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 
-import br.com.stefanini.cepapi.consulta.model.DadosCepOutput;
 import br.com.stefanini.cepapi.consulta.service.ConsultaCepService;
 
 @RestController
@@ -20,7 +19,11 @@ public class ConsultaCepController {
 	private ConsultaCepService cepService;
 	
 	@GetMapping("{cep}")
-	public ResponseEntity<DadosCepOutput> buscarCep(@PathVariable String cep) throws JsonProcessingException {
-		return ResponseEntity.ok(cepService.consultarDadosCep(cep));
+	public ResponseEntity<?> buscarCep(@PathVariable String cep) throws JsonProcessingException {
+		try {
+			return ResponseEntity.ok(cepService.consultarDadosCep(cep));			
+		} catch (Exception e) {
+			return ResponseEntity.internalServerError().body(String.format("Erro ao consultar CEP %s", cep));
+		}
 	}
 }
