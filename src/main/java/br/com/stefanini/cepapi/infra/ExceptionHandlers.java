@@ -11,8 +11,12 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 public class ExceptionHandlers {
 
 	@ExceptionHandler(HttpClientErrorException.class)
-	public ResponseEntity<String> tratarErro400() {
-		return ResponseEntity.notFound().build();
+	public ResponseEntity<String> tratarErro400(HttpClientErrorException e) {
+		return ResponseEntity.status(e.getStatusCode()).body("""
+				{
+					"erro": "CEP inválido"
+				}
+				""");
 	}
 	
 	@ExceptionHandler(JsonProcessingException.class)

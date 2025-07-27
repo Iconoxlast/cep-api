@@ -1,4 +1,4 @@
-package br.com.stefanini.cepapi.consulta.persistence;
+package br.com.stefanini.cepapi.consulta.model;
 
 import java.time.LocalDateTime;
 
@@ -20,7 +20,9 @@ public class LogsConsultas {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long iid;
+	@SuppressWarnings("unused")
 	private String cconteudo;
+	@SuppressWarnings("unused")
 	private LocalDateTime devento;
 
 }

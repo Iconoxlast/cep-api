@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 
-import br.com.stefanini.cepapi.consulta.dto.DadosCepOutput;
+import br.com.stefanini.cepapi.consulta.model.DadosCepOutput;
 import br.com.stefanini.cepapi.consulta.service.ConsultaCepService;
 
 @RestController
