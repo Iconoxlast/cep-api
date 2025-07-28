@@ -1,3 +1,0 @@
-[submodule "cep-api-wiremock"]
-	path = cep-api-wiremock
-	url = https://github.com/Iconoxlast/cep-api-wiremock
