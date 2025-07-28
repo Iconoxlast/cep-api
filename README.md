@@ -24,3 +24,5 @@ Detalhes sobre a infraestrutura:
 - Security groups organizados de maneira que a única comunicação aberta ao público ocorre através do CepAPI (no momento, IP 54.233.35.134 porta 8080). Porta 8081 (do mock) não está aberta
 - Usuário utilizado pela aplicação para comunicação com o banco de dados tem privilégios limitados
 - Ambiente configurado com variáveis para garantir flexibilidade (URL do mock, URL da base de dados, login do user dedicado no BD, password)
+
+Obs.: Para efeitos de demonstração, só foram cadastrados os CEPs 09080-001 e 13820-000.
